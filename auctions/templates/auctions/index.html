@@ -1,0 +1,30 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+
+    <h2>Active Listings</h2>
+      {% for item in listings %}
+        {% if item.image %}
+        <div class="container">
+         <div class="image">
+           <img src="{{item.image}}" class="media-object" max_width="250" height="250">
+         </div>
+         <a href="{% url 'listing' item.title %}">
+          <div class="item">
+            <h3>{{item.title}}</h3>
+            <h5>{{item.discription}}</h5>
+            <h6>{{item.bid}}</h6>
+          </div>
+         </a>
+        </div>
+    
+        {% else %}
+        <div class="item">
+          <div>{{item.title}}</div>
+          <div>{{item.discription}}</div>
+          <div>{{item.bid}}</div>
+        </div>
+        {%endif%}
+      {% endfor %}
+
+    
+{% endblock %}

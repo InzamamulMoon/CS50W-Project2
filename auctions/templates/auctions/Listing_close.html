@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+{% block body %}
+ <h1>{{listing.title}}</h1>
+  <header>Congratulations {{winner}}!</header>
+ <img src="{{listing.image}}" max_width="250" height="250">
+ <h5>{{listing.discription}}</h5>
+ <h6>{{listing.bid}}</h6>
+ <h6>{{Category}}</h6>
+
+ {% for comment in comments %}
+
+  <p>{{comment.commenters}}: {{comment.comments}}</p>
+ {% endfor %}
+{% endblock %}

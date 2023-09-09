@@ -1,0 +1,52 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+
+ {% if user.is_authenticated %}
+  {% if owner %}
+  <form action="{% url 'close' listing.title%}" methofd="post">
+    {% csrf_token %}
+   <button>Close Auction</button>
+  </form>
+  {% else %}
+   
+    <form action= "{% url 'options' listing.title%}" method="post" name=" watchlist" value="add_listing">
+       {% csrf_token %}
+        <button>add to watchlist</button>
+    </form>
+   <form action="{% url 'remove_option' listing.title%}" method="post" name="watchlist" value="remove_listing">
+     {% csrf_token %}
+     <button>remove from watchlist</button>
+    </form> 
+  {% endif %}
+ {% endif %} 
+
+ <h1>{{listing.title}}</h1>
+ <img src="{{listing.image}}" max_width="250" height="250">
+ <h5>{{listing.discription}}</h5>
+ <h6>{{listing.bid}}</h6>
+ <h6>{{Category}}</h6>
+ {% if user.is_authenticated %}
+  <form action="{% url 'bid' listing.title %}" method="post">
+    {% csrf_token %}
+    {{bid}}
+    <button >Bid</button>
+  </form>
+ {% endif %}
+ 
+  {% if user.is_authenticated %}
+   <form action="{% url 'comments' listing.title %}" method="post">
+     {% csrf_token %}
+     {{form}}
+     <button>Comment</button>
+   </form>
+  {% endif %}
+ 
+ 
+
+   {% for comment in comments %}
+
+    <p>{{comment.commenters}}: {{comment.comments}}</p>
+   {% endfor %}
+  
+{% endblock %}

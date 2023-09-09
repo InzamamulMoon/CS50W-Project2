@@ -1,0 +1,13 @@
+#image{
+    object-fit: contain;
+}
+
+.container{
+    display: flex;
+    align-content: center;
+    margin-left: 5px;
+}
+
+.item{
+    font-size: 10px;
+}
