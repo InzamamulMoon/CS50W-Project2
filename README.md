@@ -4,17 +4,6 @@ CS50’s Web Programming with Python and JavaScript Project 2-Commerce
 ## OVerview 
 A simple ecommerce website where items can be auctioned using Django, HTML, and CSS
 
-## Project Specifications 
-<div align="center">
- <img style="width: 20%;" src="https://github.com/ahr9n/cs50w-commerce/blob/master/auctions/static/auctions/img/icon.png" alt="Best Place to Bid!">
-</div>
-
-# Commerce
-Project 2 for CS50’s Web Programming with Python and JavaScript.
-
-## Overview
-An eBay-like e-commerce auction site design that will allow users to post auction listings, place bids on listings, comment on those listings, and add listings to a “watchlist.”
-
 ## Specification
 This project fulfills the following requirements:
 
